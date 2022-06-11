@@ -1,0 +1,12 @@
+SELECT  ce.emp_no,
+    ce.first_name,
+	ce.last_name,
+    ce.to_date,
+	d.dept_name,
+	de.dept_no
+INTO department_retirees
+FROM current_emp as ce
+INNER JOIN dept_emp as de
+ON (ce.emp_no = de.emp_no)
+INNER JOIN departments as d
+ON (de.dept_no = d.dept_no)
